@@ -17,6 +17,13 @@ class Window:
 
     def draw_line(self, line, fill_color="black"):
         line.draw(self.__canvas, fill_color)
+    
+    def draw_cell(self, cell):
+        cell.draw(cell._x1, cell._y1, cell._x2, cell._y2)
+    
+    def draw_move(self, to_cell, undo=False):
+        pass
+            
        
         
     def wait_for_close(self):
@@ -38,6 +45,5 @@ class Line:
         self.p1 = p1
         self.p2 = p2
         
-
     def draw(self, canvas, fill_color="black"):
         canvas.create_line(self.p1.x, self.p1.y, self.p2.x, self.p2.y, fill=fill_color, width=2)
